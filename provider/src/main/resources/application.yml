@@ -1,0 +1,15 @@
+server:
+  port: 8081
+spring:
+  application:
+    name: provider
+dubbo:
+  application:
+    name: ${spring.application.name}
+  registry:
+    address: zookeeper://10.0.0.8:2181,10.0.0.8:2182,10.0.0.8:2183
+  scan:
+    base-packages: com.luobo.provider.service
+  protocol:
+    name: dubbo
+    port: 20881
